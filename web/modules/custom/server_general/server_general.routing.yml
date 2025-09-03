@@ -1,0 +1,11 @@
+server_general.group_subscribe:
+  path: '/group/{group}/subscribe'
+  defaults:
+    _controller: '\Drupal\server_general\Controller\GroupController::subscribe'
+    _title: 'Subscribe to group'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      group:
+        type: entity:node
