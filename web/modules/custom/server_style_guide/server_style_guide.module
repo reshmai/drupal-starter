@@ -49,5 +49,13 @@ function server_style_guide_theme() {
     ],
   ];
 
+  // A Person card.
+  $info['server_style_guide_person_card'] = [
+      'variables' => [
+        'title' => NULL,
+        'cards' => [],
+      ]
+  ];
+  
   return $info;
 }

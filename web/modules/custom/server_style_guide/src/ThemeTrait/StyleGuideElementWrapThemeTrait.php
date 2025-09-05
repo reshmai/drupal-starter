@@ -59,4 +59,24 @@ trait StyleGuideElementWrapThemeTrait {
     ];
   }
 
+  /**
+   * Get the prefix to show as the component's title.
+   *
+   * @param string $title
+   *   The component name.
+   * @param string $link
+   *   Optional; Link to the design.
+   *
+   * @return array
+   *   Render array.
+   */
+  protected function getComponentPersonCard(array $cards, string $title, ?string $link = NULL): array {
+
+    return [
+      '#theme' => 'server_style_guide_person_card',
+      '#title' => $this->getComponentPrefix($title, $link),
+      '#cards' => $cards,
+    ];
+  }
+
 }

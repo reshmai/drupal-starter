@@ -2,6 +2,7 @@ toolbar:
   css:
     component:
       css/server_style_guide.toolbar.css: {}
+      css/server_style_guide.person_card.css: {}
 accordion:
   js:
     js/accordion.js: {}

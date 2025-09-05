@@ -79,7 +79,7 @@ class GroupSubscriptionFunctionalTest extends ServerGeneralTestBase {
     $this->drupalGet($this->groupNode->toUrl());
 
     // Check that the greeting/subscribe message appears.
-    $this->assertSession()->pageTextContains('Hi ' . $this->testUser->getDisplayName());
+    $this->assertSession()->pageTextContains('Hi ' . $this->testUser->getDisplayName() . ', click here if you would like to subscribe to this group called ' . $this->groupNode->label() . '.');
 
     // Find and click the subscribe link.
     $link = $this->getSession()->getPage()->findLink('here');
