@@ -213,6 +213,10 @@ class StyleGuideController extends ControllerBase {
     $element = $this->getWebformElement();
     $build[] = $this->wrapElementNoContainer($element, 'Element: Webform');
 
+    $element = $this->personCard();
+    $build[] = $this->getComponentPersonCard($element, 'Element: Person cards');
+
+
     return $build;
   }
 
@@ -934,6 +938,26 @@ class StyleGuideController extends ControllerBase {
       $this->getRandomTitle(),
       $this->buildProcessedText('Decorate one package of cauliflower in six teaspoons of plain vinegar. Try flavoring the crême fraîche gingers with clammy rum and fish sauce, simmered.'),
     );
+  }
+
+  /**
+   * Display person card style guide.
+   */
+  public function personCard() {
+    $cards = [];
+    $image_path = '/' . \Drupal::service('extension.list.module')
+    ->getPath('server_style_guide') . '/assets/image.jpg';
+
+    for ($i = 1; $i <= 10; $i++) {
+      $cards[] = [
+        'name' => "Person $i",
+        'role' => "Role $i",
+        'text' => "Admin $i",
+        'image' => $image_path,
+      ];
+    }
+
+    return $cards;
   }
 
 }
